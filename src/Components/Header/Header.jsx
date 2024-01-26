@@ -94,7 +94,7 @@ const Header = () => {
             <p className="text-xs md:text-sm text-light_text flex flex-col">Deliver to <span className="font-bold text-white_text">Syria</span></p>
         </div>
    
-        <div className="flex flex-grow h-10 relative lgl:flex">
+        <div className="hidden flex-grow h-10 relative lgl:flex">
             <p onClick={() => {setShowDropDown(!showDropDown)}} className="pHover">All <ArrowDropDownIcon/></p>
             {
                 // if this condition is true , only then return what after &&
@@ -142,8 +142,7 @@ const Header = () => {
                             <p className="text-xs font-semibold mt-3 text-white_text">
                                 Cart 
                                 <span className="absolute -top-1 right-6 p-1 h-4 bg-[#f3a847] text-amazon_blue rounded-full flex items-center justify-center">
-                                    {/* {totalQuantity > 0  ? totalQuantity : 0} */}
-                                    {totalQuantity}
+                                    {totalQuantity > 0  ? totalQuantity : 0}
                                 </span>
                             </p>
                         </div>
