@@ -20,8 +20,8 @@ const Header = () => {
     const navigate = useNavigate()
     // console log the state alone forst to see what useselector returned 
     // const numOfItems = useSelector((state) => state)
-    const items = useSelector((state) => state.cart.products)
-    const userInfo = useSelector((state) => state.user.userInfo)
+    let items = useSelector((state) => state.cart.products)
+    let userInfo = useSelector((state) => state.user.userInfo)
     const dispatch = useDispatch()
     const [logoutPopupVisible, setLogoutPopupVisible] = useState(false);
     // console.log(items)
@@ -40,24 +40,32 @@ const Header = () => {
           setLogoutPopupVisible(true)
     }
 
+
+    const handleCancelLogout = () => {
+        setLogoutPopupVisible(false);
+      };
+
     const handleConfirmLogout = () => {
         // Close the popup
         setLogoutPopupVisible(false);
-    
         // Dispatch the logout action
         signOut(auth).then(() => {
             console.log("Sign-out successful")
-            dispatch(userSignOut())
+            console.log("dispatch signout")
             dispatch(clearCart())
-            navigate("/",{replace:true})
-          }).catch((error) => {
+            localStorage.removeItem('persist:root')
+            console.log(localStorage.getItem('persist:root'))
+            console.log(userInfo)
+            dispatch(userSignOut())
+            userInfo = null
+            console.log(userInfo)
+            navigate("/",{replace:true,preventScrollReset : false})
+        }).catch((error) => {
             alert(error)
-          });
-      };
+        });
+    };
     
-      const handleCancelLogout = () => {
-        setLogoutPopupVisible(false);
-      };
+
 
       return (
        <>

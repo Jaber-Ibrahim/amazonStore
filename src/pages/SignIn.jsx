@@ -98,7 +98,7 @@ const SignIn = () => {
             {successMessage ? 
             <SuccessMsg>{successMessage}</SuccessMsg> 
             : 
-            <SuccessMsg>you are alreday signing in - <Link to={"/"} className="text-green-600 text-4xl"> Go Home</Link></SuccessMsg> 
+            <SuccessMsg>you are alreday signing in - <Link to={"/"} className="text-green-600 text-3xl"> Go Home</Link></SuccessMsg> 
             }
         </div> 
       :
