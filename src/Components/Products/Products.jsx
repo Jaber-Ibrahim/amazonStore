@@ -3,9 +3,6 @@ import axiosInstance from "../../axios/axios"
 import { Spinner } from "../import"
 import ProductCard from "./ProductCard"
 
-
-
-
 const Products = () => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
@@ -20,7 +17,7 @@ const Products = () => {
               setLoading(false)
             })
             .catch((error) => alert(error))
-        } , []);
+        } , [products]);
 
         const myProducts = products?.map((product) => (
             <ProductCard 

@@ -13,7 +13,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { userSignOut } from "../../redux/features/userSlice";
 import { auth } from "../../firebase";
 import { signOut } from "firebase/auth";
-import {LogoutConfirmationPopup} from "./../import"
+import {Popup} from "./../import"
 import { clearCart } from "../../redux/features/cartSlice";
 
 const Header = () => {
@@ -62,9 +62,12 @@ const Header = () => {
       return (
        <>
         { logoutPopupVisible &&
-            <LogoutConfirmationPopup
+            <Popup
                 onConfirm={handleConfirmLogout}
-                onCancel={handleCancelLogout}/>  
+                onCancel={handleCancelLogout}
+                confirm = "Continue"
+                cancel = "Cancel"
+                msg="Are you sure you want to logout? You will lose all the products in your cart."/>  
         }
         <div className="sticky top-0 z-50">
         <div className="w-full bg-amazon_blue text-white px-4 py-3 flex items-center justify-between gap-4">

@@ -8,5 +8,5 @@ export {default as MyInput } from "./MyInput/MyInput"
 export {default as ErrorMsg } from "./ErrorMsg/ErrorMsg"
 export {default as Button } from "./Button/Button"
 export {default as SuccessMsg } from "./SuccessMsg/SuccessMsg"
-export {default as LogoutConfirmationPopup } from "./LogoutConfirmationPopup/LogoutConfirmationPopup"
+export {default as Popup } from "./Popup/Popup"
 

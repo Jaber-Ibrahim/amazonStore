@@ -6,13 +6,18 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useDispatch, useSelector } from "react-redux"
 import { addToCart} from '../../redux/features/cartSlice';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { Popup } from '../import';
 
 
 const ProductCard = (props) => {
   const dispatch = useDispatch()
   const userInfo = useSelector((state) => state.user.userInfo)
   const navigate = useNavigate()
+  const [PopupVisible, setPopupVisible] = useState(false);
+
   const addHandler = () => {
+    setPopupVisible(true)
     if(userInfo) {
       dispatch(addToCart({
         id : props.id ,
@@ -27,7 +32,18 @@ const ProductCard = (props) => {
       navigate("/signin" , {replace:true})
     }
   }
+
+  const PopupVisibleHandler = () => {
+    setPopupVisible(false)
+  }
   return (
+    <>
+    { PopupVisible &&
+      <Popup
+          onConfirm={PopupVisibleHandler}
+          confirm = "Continue"
+          msg = "Product Added to Your Cart"/>  
+    }
     <div className="bg-white h-auto border-[1px] border-gray-200 py-8 z-30 hover:border-transparent shadow-none hover:shadow-test_shadow duration-300 relative flex flex-col gap-3 rounded-md px-6">
         <span className='absolute top-5 right-5 text-xs capitalize text-gray-300'>{props.category}</span>
       <div className="w-full h-auto items-center justify-center relative overflow-hidden group">
@@ -57,6 +73,7 @@ const ProductCard = (props) => {
         {userInfo ? "Add to Cart" : "Sign in to add "  }
         </button>
     </div>
+    </>
   )
 }
 
