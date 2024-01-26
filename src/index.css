@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {
+  .headerHover {
+    @apply px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer duration-500;
+  }
+  .pHover {
+    @apply w-14 bg-gray-200 flex items-center justify-center p-1 rounded-tl-md rounded-bl-md text-amazon_blue cursor-pointer duration-500 hover:bg-gray-300;
+  }
+  .searchIcon {
+    @apply w-12 flex justify-center items-center h-full bg-amazon_yellow p-1 hover:bg-[#f3a847] duration-500 text-amazon_blue cursor-pointer rounded-tr-md rounded-br-md; 
+  }
+  .myInput {
+    @apply text-amazon_blue flex-grow outline-none border-none p-1;
+  }
+  .myUl {
+    @apply absolute w-56 h-80 top-10 left-0 overflow-y-scroll overflow-x-hidden bg-white border-[1px] border-amazon_blue text-black p-2 flex-col gap-1 z-50;
+  }
+  .myLi {
+    @apply text-sm tracking-wide border-b-[1px] border-b-transparent hover:border-b-amazon_blue cursor-pointer duration-300;
+  }
+  .footerLink {
+    @apply text-sm tracking-wide hover:text-gray-100 cursor-pointer hover:underline duration-150
+  }
+  .footerpara {
+    @apply flex gap-1 items-center justify-center border border-gray-500 hover:border-amazon_yellow cursor-pointer duration-300 px-2 py-1
+  }
+  .footerBottomTitle {
+    @apply w-24 font-semibold text-[12x] group-hover:underline text-[#ddd] leading-3 mb-[2px]
+  }
+  .footerBottomText {
+    @apply w-24 tracking-tight text-[12px] text-[#999] group-hover:underline leading-3
+  }
+  .productLi {
+    @apply text-gray-600 hover:text-black text-sm font-medium border-b-[1px] border-b-gray-400 hover:border-b-gray-700 flex items-center justify-end gap-2 hover:cursor-pointer duration-300 w-full
+  }
+}
+/* :root {
+  --amazon_blue : #131921;
+  --amazon_light : #232f3e;
+  --amazon_yellow : #febd69;
+  --white_text : #ffffff;
+  --light_text : #ccc;
+  --quantity_box : #f0f2f2;
+  --footer_bottom : #131a22;
+  --test_shadow : 0px 0px 32px 1px rgba(199,199,199,1);
+  --amazon_input_shadow : 0 0 3px 2px rgba(228,121,17 / 50%)    
+} */
+
+

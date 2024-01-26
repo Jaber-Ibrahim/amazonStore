@@ -1,0 +1,12 @@
+export {default as Header } from "./Header/Header"
+export {default as HomeSlider } from "./Slider/HomeSlider"
+export {default as Footer } from "./Footer/Footer"
+export {default as Products } from "./Products/Products"
+export {default as Spinner } from "./Spinner/Spinner"
+export {default as NotValidPath } from "./NotValidPath/NotValidPath"
+export {default as MyInput } from "./MyInput/MyInput"
+export {default as ErrorMsg } from "./ErrorMsg/ErrorMsg"
+export {default as Button } from "./Button/Button"
+export {default as SuccessMsg } from "./SuccessMsg/SuccessMsg"
+export {default as LogoutConfirmationPopup } from "./LogoutConfirmationPopup/LogoutConfirmationPopup"
+
