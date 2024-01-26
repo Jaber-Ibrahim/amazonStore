@@ -58,8 +58,9 @@ const Header = () => {
             console.log(userInfo)
             dispatch(userSignOut())
             userInfo = null
+            items = null
             console.log(userInfo)
-            navigate("/",{replace:true,preventScrollReset : false})
+            navigate("/",{replace:true})
         }).catch((error) => {
             alert(error)
         });
@@ -77,7 +78,8 @@ const Header = () => {
                 cancel = "Cancel"
                 msg={items.length > 0 ?
                     "Are you sure you want to logout? You will lose all the products in your cart." 
-                : "Are You Sure"}/>  
+                    :   
+                    "Are You Sure"}/>  
         }
         <div className="sticky top-0 z-50">
         <div className="w-full bg-amazon_blue text-white px-4 py-3 flex items-center justify-between gap-4">
@@ -140,7 +142,8 @@ const Header = () => {
                             <p className="text-xs font-semibold mt-3 text-white_text">
                                 Cart 
                                 <span className="absolute -top-1 right-6 p-1 h-4 bg-[#f3a847] text-amazon_blue rounded-full flex items-center justify-center">
-                                    {totalQuantity > 0  ? totalQuantity : 0}
+                                    {/* {totalQuantity > 0  ? totalQuantity : 0} */}
+                                    {totalQuantity}
                                 </span>
                             </p>
                         </div>

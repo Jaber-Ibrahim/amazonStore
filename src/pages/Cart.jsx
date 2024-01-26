@@ -6,10 +6,14 @@ import {motion} from "framer-motion"
 
 
 import { emptyCart } from '../assets/index';
-import { Link } from 'react-router-dom';
 import { Button } from '../Components/import';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
+    const navigate = useNavigate()
+    const navigateToHandler = () => {
+        navigate("/" , {replace:true})
+      }
     const [totalPrice, setTotalPrice] = useState(0)
     const products = useSelector((state) => state.cart.products)
     const userInfo = useSelector((state) => state.user.userInfo)
@@ -94,11 +98,9 @@ const Cart = () => {
           </div>
           <div className="w-96 bg-white p-6 flex flex-col items-center rounded-md shadow-lg">
               <h1 className='text-xl font-bold'>Your cart is empty</h1>
-              <p className="text-sm text-center">
+              <p className="text-sm text-center mb-4">
               fill your card with books , electronics , videos etc...</p>
-              <Link to={"/"} className='w-full mt-4'>
-                  <Button>Continue Shopping</Button>
-              </Link>
+                  <Button handler={navigateToHandler}>Continue Shopping</Button>
           </div>
       </motion.div>
       }

@@ -55,7 +55,6 @@ const HomeSlider = () => {
               {
                 width: "30px",
                 height: "30px",
-                color: "blue",
                 borderRadius: "50%",
                 display: "flex",
                 alignItems : "center",
