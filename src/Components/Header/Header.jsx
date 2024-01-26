@@ -26,7 +26,7 @@ const Header = () => {
     const [logoutPopupVisible, setLogoutPopupVisible] = useState(false);
     // console.log(items)
     const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
-    
+    // console.log(items)
     const [showDropDown , setShowDropDown] = useState(false)
     const myLiItems = dropDownItems.map((item) => {
         return (
@@ -69,13 +69,15 @@ const Header = () => {
 
       return (
        <>
-        { logoutPopupVisible &&
+        { logoutPopupVisible  &&
             <Popup
                 onConfirm={handleConfirmLogout}
                 onCancel={handleCancelLogout}
                 confirm = "Continue"
                 cancel = "Cancel"
-                msg="Are you sure you want to logout? You will lose all the products in your cart."/>  
+                msg={items.length > 0 ?
+                    "Are you sure you want to logout? You will lose all the products in your cart." 
+                : "Are You Sure"}/>  
         }
         <div className="sticky top-0 z-50">
         <div className="w-full bg-amazon_blue text-white px-4 py-3 flex items-center justify-between gap-4">
@@ -90,7 +92,7 @@ const Header = () => {
             <p className="text-xs md:text-sm text-light_text flex flex-col">Deliver to <span className="font-bold text-white_text">Syria</span></p>
         </div>
    
-        <div className="flex flex-grow h-10 relative hidden lgl:flex">
+        <div className="flex flex-grow h-10 relative lgl:flex">
             <p onClick={() => {setShowDropDown(!showDropDown)}} className="pHover">All <ArrowDropDownIcon/></p>
             {
                 // if this condition is true , only then return what after &&
