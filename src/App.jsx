@@ -16,7 +16,7 @@ function App() {
   };
   return (
     <div className="bg-gray-100">
-      <BrowserRouter basename="/amazonByJaber">
+      <BrowserRouter basename="/amazonStore">
           <Routes>
             <Route path="/" element={<Layout/>} >
               <Route path="/" element={<Home />} />
